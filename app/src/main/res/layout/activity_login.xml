@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Login">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/lg_edumom"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edumom"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="100dp"
+                android:layout_centerHorizontal="true" />
+
+            <LinearLayout
+                android:id="@+id/lg_linlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-50dp"
+                android:layout_below="@id/lg_logo"
+                android:background="@drawable/shape_bg"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lg_layemail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lg_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lg_laypassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:hint="Password"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/pink">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lg_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/lg_logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/logo_fill"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/lg_edumom"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lg_masuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-30dp"
+                android:textAlignment="center"
+                android:text="Masuk"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/darkpurple"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:layout_below="@id/lg_linlay"/>
+
+            <TextView
+                android:id="@+id/lg_tanya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum punya akun?"
+                android:textColor="@color/pink"
+                android:textStyle="bold"
+                android:layout_below="@+id/lg_linlay"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="80dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/lg_registrasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lg_linlay"
+                android:layout_alignRight="@+id/lg_tanya"
+                android:textAlignment="center"
+                android:layout_marginTop="65dp"
+                android:layout_marginBottom="65dp"
+                android:text="Registrasi"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_button"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/ic_subdirectory_arrow_right_black_24dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

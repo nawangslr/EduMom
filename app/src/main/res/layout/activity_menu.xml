@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Menu">
+
+<!--    Tollbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mn_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/toolbar_bg"
+        android:layout_margin="10dp"
+        app:titleTextColor="@color/cream"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mn_edumom"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:background="@drawable/edumom"
+        android:backgroundTintMode="@color/cream"
+        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/mn_toolbar"/>
+
+<!--    Kalender -->
+    <LinearLayout
+        android:id="@+id/mn_kalender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mn_toolbar"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:background="@drawable/toolbar_bg"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Halo, Bon!"
+                android:textSize="20sp"
+                android:textColor="@color/darkpurple"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Udah cek perkembanganku hari ini?"
+                android:textSize="16sp"
+                android:textColor="@color/darkpurple"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Lihat kalender kehamilan >>"
+                android:textSize="12sp"
+                android:textColor="@color/darkpurple"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_kalender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/mn_kalender"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mn_kalender"
+        android:layout_marginVertical="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!--                 Mitos dan Fakta -->
+                <LinearLayout
+                    android:id="@+id/mn_mitosfakta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/orange_bg"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mitos dan
+                        Fakta"
+                        android:textColor="@color/darkpurple"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bon, jangan minum air es nanti.."
+                        android:textColor="@color/darkpurple"
+                        android:textSize="12sp"
+                        android:layout_marginTop="10dp"/>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_mitosfakta"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/mn_mitosfakta"
+                        android:scaleType="fitEnd"/>
+
+                </LinearLayout>
+
+                <!--                Serba-Serbi Kehamilan -->
+                <LinearLayout
+                    android:id="@+id/mn_kehamilan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="30dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/green"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Serba-Serbi Kehamilan"
+                            android:textSize="18sp"
+                            android:textColor="@color/darkpurple"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Bon, harus rajin baca biar aku pinter!"
+                            android:textSize="12sp"
+                            android:textColor="@color/darkpurple"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_kehamilan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/mn_kehamilan"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!--                Gizi dan Nutrisi -->
+                <LinearLayout
+                    android:id="@+id/mn_gizinutrisi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="30dp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/pink"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gizi dan Nutrisi"
+                            android:textSize="18sp"
+                            android:textColor="@color/darkpurple"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bon, udah tau makanan yang baik untukku?"
+                            android:textSize="12sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/darkpurple"/>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_gizinutrisi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/mn_gizinutrisi"
+                        android:layout_gravity="end"
+                        android:scaleType="fitEnd"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <!--                Serba-Serbi Persalinan -->
+                <LinearLayout
+                    android:id="@+id/mn_persalinan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/purple_bg"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serba-Serbi Persalinan"
+                        android:textSize="18sp"
+                        android:textColor="@color/darkpurple"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bon, udah siapin apa aja untuk menyambutku?"
+                        android:textSize="12sp"
+                        android:textColor="@color/darkpurple"
+                        android:layout_marginTop="10dp"/>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_persalinan"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/mn_persalinan"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <!--<androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="140dp"
+        android:textAlignment="center"
+        android:text="logout"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/darkpurple"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"/>-->
+
+</RelativeLayout>

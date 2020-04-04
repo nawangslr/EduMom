@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Registrasi">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rg_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Baca dulu!"
+                android:textColor="@color/white"
+                android:drawableStart="@drawable/ic_info_black_24dp"
+                android:drawablePadding="5dp"
+                android:backgroundTint="@color/pink"
+                android:layout_alignParentLeft="true"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rg_edumom"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edumom"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rg_info"/>
+
+            <LinearLayout
+                android:id="@+id/rg_linlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-50dp"
+                android:layout_below="@id/rg_logo"
+                android:background="@drawable/shape_bg"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_layemail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_laypassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/pink">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--<com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_layconfirmpass"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Ulangi Password"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/pink">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_confirmpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/rg_btnhpht"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:text="Pilih Tanggal HPHT"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/darkpurple"
+                    android:drawableLeft="@drawable/ic_person_add_black_24dp"
+                    android:drawablePadding="5dp"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_layhpht"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Hari Pertama Haid Terakhir"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_hpht"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="date"
+                        android:enabled="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_layhpl"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Hari Perkiraan Lahir"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_hpl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="date"
+                        android:enabled="false"
+                        android:visibility="gone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+<!--
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_gravity="center_horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/rg_laytglhpht"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Tanggal"
+                        android:textColorHint="@color/darkpurple"
+                        android:layout_gravity="center_horizontal"
+                        app:boxStrokeColor="@color/darkpurple"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rg_tglhpht"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/pink"
+                            android:inputType="date"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/rg_layblnhpht"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Bulan"
+                        android:textColorHint="@color/darkpurple"
+                        android:layout_gravity="center_horizontal"
+                        app:boxStrokeColor="@color/darkpurple"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rg_blnhpht"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/pink"
+                            android:inputType="date"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/rg_laythnhpht"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Tahun"
+                        android:textColorHint="@color/darkpurple"
+                        android:layout_gravity="center_horizontal"
+                        app:boxStrokeColor="@color/darkpurple"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rg_thnhpht"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/pink"
+                            android:inputType="date"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_laysiklus"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Lama Siklus Menstruasi"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_siklus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_layusiakehamilan"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Usia Kehamilan"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_usiakehamilan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rg_laynohp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:hint="Nomor HP Suami"
+                    android:textColorHint="@color/darkpurple"
+                    android:layout_gravity="center_horizontal"
+                    app:boxStrokeColor="@color/darkpurple">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rg_nohp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pink"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rg_logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/logo_fill"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rg_edumom"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rg_daftar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rg_linlay"
+                android:layout_marginTop="-25dp"
+                android:textAlignment="center"
+                android:text="Daftar"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/darkpurple"
+                android:drawableLeft="@drawable/ic_person_add_black_24dp"
+                android:drawablePadding="5dp"/>
+
+           <!-- <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/rg_load"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/rg_daftar"
+                android:backgroundTint="@color/pink"
+                android:visibility="invisible" />-->
+
+            <TextView
+                android:id="@+id/rg_tanya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah punya akun?"
+                android:textColor="@color/pink"
+                android:textStyle="bold"
+                android:layout_below="@+id/rg_linlay"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="90dp"
+                android:layout_marginBottom="80dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rg_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rg_linlay"
+                android:layout_alignRight="@+id/lg_tanya"
+                android:textAlignment="center"
+                android:layout_marginTop="75dp"
+                android:layout_marginBottom="75dp"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_button"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/ic_subdirectory_arrow_right_black_24dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:drawablePadding="5dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

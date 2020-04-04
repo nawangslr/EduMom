@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "608019215964",
+    "firebase_url": "https://edumom-c796a.firebaseio.com",
+    "project_id": "edumom-c796a",
+    "storage_bucket": "edumom-c796a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608019215964:android:2c4f1dd309307b9eaf5899",
+        "android_client_info": {
+          "package_name": "nawang.salira.edumom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608019215964-5i4978n4s91hbcn1jg219o380crgnk0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nawang.salira.edumom",
+            "certificate_hash": "f2756b7b43cd319fe81bb558a51f9f9456daeb1a"
+          }
+        },
+        {
+          "client_id": "608019215964-75g02gk0ob7mhk2ut66gqstaecppet1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2cF9TM119YLQ3Ey4qxYRfdNAKtU2E7qI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608019215964-75g02gk0ob7mhk2ut66gqstaecppet1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
