@@ -24,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Kalender extends AppCompatActivity {
@@ -43,13 +44,15 @@ public class Kalender extends AppCompatActivity {
         kal_deskripsi = findViewById(R.id.kal_deskripsi);
         FirebaseUser user = mAuth.getCurrentUser();
 
-        database = FirebaseDatabase.getInstance().getReference().child("IbuHamil").child(user.getUid()).child("tglHpl");
-        ValueEventListener postListener = new ValueEventListener() {
+        Query query = FirebaseDatabase.getInstance().getReference("IbuHamil").orderByChild("email").equalTo(user.getEmail());
+        final ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String hpl = dataSnapshot.getValue(String.class);
-                kal_tglHpl.setText(hpl);
-                Toast.makeText(getApplicationContext(), hpl, Toast.LENGTH_SHORT).show();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    IbuHamil ibuHamil = postSnapshot.getValue(IbuHamil.class);
+                    kal_tglHpl.setText(ibuHamil.getTglHpl());
+                    Toast.makeText(getApplicationContext(), "Ambil user", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -57,7 +60,7 @@ public class Kalender extends AppCompatActivity {
 
             }
         };
-        database.addValueEventListener(postListener);
+        query.addValueEventListener(postListener);
 
 //        database.addValueEventListener(new ValueEventListener() {
 //            @Override
