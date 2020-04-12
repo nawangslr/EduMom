@@ -44,6 +44,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/kal_linlay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -73,27 +74,7 @@
                     android:textColor="@color/darkpurple"
                     android:textSize="16dp"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/kal_laytglhpht"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="50dp"
-                    android:hint="Tanggal"
-                    android:textColorHint="@color/darkpurple"
-                    android:layout_gravity="center_horizontal"
-                    app:boxStrokeColor="@color/darkpurple">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/kal_tglhpht"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/pink"
-                        android:enabled="false"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:gravity="center_horizontal"/>
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:id="@+id/kal_deskripsi"
@@ -114,6 +95,19 @@
                 android:layout_height="100dp"
                 android:background="@drawable/shape_round_button"
                 android:layout_centerHorizontal="true" />
+            <TextView
+                android:id="@+id/kal_tglHpl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Tanggal HPL"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/darkpurple"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/kal_linlay"
+                android:layout_centerHorizontal="true"/>
 
         </RelativeLayout>
 
