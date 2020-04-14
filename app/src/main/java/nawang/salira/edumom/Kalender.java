@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,13 +27,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class Kalender extends AppCompatActivity {
 
     ImageButton kal_kembali;
-    TextView kal_tglHpl, kal_deskripsi;
+    ImageView kal_janin;
+    TextView kal_tglHpl, kal_deskripsi, kal_usiakehamilan;
     FirebaseAuth mAuth;
     DatabaseReference database;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +47,38 @@ public class Kalender extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         kal_tglHpl = findViewById(R.id.kal_tglHpl);
         kal_deskripsi = findViewById(R.id.kal_deskripsi);
+        kal_usiakehamilan = findViewById(R.id.kal_usiakehamilan);
+
+        kal_janin = findViewById(R.id.kal_janin);
         FirebaseUser user = mAuth.getCurrentUser();
 
+
         Query query = FirebaseDatabase.getInstance().getReference("IbuHamil").orderByChild("email").equalTo(user.getEmail());
-        final ValueEventListener postListener = new ValueEventListener() {
+        ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     IbuHamil ibuHamil = postSnapshot.getValue(IbuHamil.class);
                     kal_tglHpl.setText(ibuHamil.getTglHpl());
-                    Toast.makeText(getApplicationContext(), "Ambil user", Toast.LENGTH_SHORT).show();
+                    kal_usiakehamilan.setText(String.valueOf(ibuHamil.getUsiaKehamilan()));
+                    System.out.println("Jadi isi usia kehamilan adalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah" +kal_usiakehamilan);
+//                    Toast.makeText(getApplicationContext(), "Ambil user", Toast.LENGTH_SHORT).show();
+
+                    if (!kal_usiakehamilan.equals(R.string.janin3)) {
+                        FirebaseDatabase.getInstance().getReference("image").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                String link = dataSnapshot.getValue(String.class);
+                                Picasso.get().load(link).into(kal_janin);
+                                Toast.makeText(getApplicationContext(), "Ambil gambar", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
                 }
             }
 
@@ -62,79 +89,27 @@ public class Kalender extends AppCompatActivity {
         };
         query.addValueEventListener(postListener);
 
-//        database.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                String hpl = dataSnapshot.getValue(String.class);
-//                kal_tglHpl.setText(hpl);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                throw databaseError.toException();
-//            }
-//        });
 
-        /*database = FirebaseDatabase.getInstance().getReference().child("IbuHamil").child(getUserID);
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                IbuHamil ibuHamil = dataSnapshot.getValue(IbuHamil.class);
-                if (kal_tglHpl != null) {
+        /*if (txt_usia.getText().toString().equals(R.string.janin3)) {
+            Query query1 = FirebaseDatabase.getInstance().getReference("image");
+            ValueEventListener cekImage = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String link = dataSnapshot.getValue(String.class);
+                    Picasso.get().load(link).into(kal_janin);
+                    Toast.makeText(getApplicationContext(), "Ambil gambar", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-                kal_tglHpl.setText(ibuHamil.getTglHpl());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+            };
+            query1.addValueEventListener(cekImage);
+        } else {
+            Toast.makeText(getApplicationContext(), "Tidak Ambil Gambar", Toast.LENGTH_SHORT).show();
+        }
 */
-        /*database.child("IbuHamil").child(getUserID).addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot postSnapshot, String s) {
-                IbuHamil ibuHamil = postSnapshot.getValue(IbuHamil.class);
-                kal_tglHpl.setText(ibuHamil.getTglHpl());
-                kal_deskripsi.setText(ibuHamil.getNoHp());
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-*/
-        /*database.child("IbuHamil").child(getUserID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    IbuHamil ibuHamil = snapshot.getValue(IbuHamil.class);
-                    kal_tglHpl.setText(ibuHamil.getTglHpht());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.w("loadPost:onCancelled", databaseError.toException());
-            }
-        });*/
 
         kal_kembali = findViewById(R.id.kal_kembali);
         kal_kembali.setOnClickListener(new View.OnClickListener() {
